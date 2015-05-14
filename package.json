@@ -20,9 +20,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fusionbox/makedecorator.git"
+    "url": "https://github.com/fusionbox/makedecorator-js.git"
   },
-  "homepage": "https://github.com/fusionbox/makedecorator",
+  "homepage": "https://github.com/fusionbox/makedecorator-js",
   "keywords": [
     "decorators",
     "ES7",

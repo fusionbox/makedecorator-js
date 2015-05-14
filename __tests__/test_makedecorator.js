@@ -1,9 +1,9 @@
-jest.dontMock('../src/makedecorator.js');
+jest.dontMock('../src/makedecorator');
 
 describe('makedecorator', function() {
 
   it('should decorate class method', function() {
-    let makeDecorator = require('../src/makedecorator.js')
+    let makeDecorator = require('../src/makedecorator')
       , yell = function(fn) {
           return function() {
             return fn.apply(this, arguments) + '!';
@@ -27,7 +27,7 @@ describe('makedecorator', function() {
   });
 
   it('should wrap function', function() {
-    let makeDecorator = require('../src/makedecorator.js')
+    let makeDecorator = require('../src/makedecorator')
       , yell = function(fn) {
           return function() {
             return fn.apply(this, arguments) + '!';

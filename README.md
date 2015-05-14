@@ -13,7 +13,7 @@ ES7 Decorators employ the same function signature as `Object.defineProperty`, `f
 ## Example
 
 ```javascript
-var makeDecorator = require('makedecorator.js')
+var makeDecorator = require('makedecorator')
 
 function yell(fn) {
   return function() {

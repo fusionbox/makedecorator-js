@@ -8,14 +8,15 @@ describe('makedecorator', function() {
           return function() {
             return fn.apply(this, arguments) + '!';
           };
-        };
+        }
+      , yellDecorator = makeDecorator(yell);
 
     class MyClass {
-      @makeDecorator(yell)
+      @yellDecorator
       greet() {
         return 'Hello';
       }
-      @makeDecorator(yell)
+      @yellDecorator
       introduce(name1, name2) {
         return `${name1}, meet ${name2}`;
       }
@@ -25,28 +26,24 @@ describe('makedecorator', function() {
     expect((new MyClass()).introduce('Bob', 'Alice')).toBe('Bob, meet Alice!');
   });
 
-  it('should wrap class method', function() {
+  it('should wrap function', function() {
     let makeDecorator = require('../src/makedecorator.js')
       , yell = function(fn) {
           return function() {
             return fn.apply(this, arguments) + '!';
           };
-        };
+        }
+      , yellDecorator = makeDecorator(yell);
 
-    class MyClass {
-      greet() {
-        return 'Hello';
-      }
-      introduce(name1, name2) {
-        return `${name1}, meet ${name2}`;
-      }
+    function greet() {
+      return 'Hello';
     }
 
-    let instance = new MyClass();
-    instance.greet = makeDecorator(yell)(instance.greet);
-    instance.introduce = makeDecorator(yell)(instance.introduce);
+    function introduce(name1, name2) {
+      return `${name1}, meet ${name2}`;
+    }
 
-    expect(instance.greet()).toBe('Hello!');
-    expect(instance.introduce('Bob', 'Alice')).toBe('Bob, meet Alice!');
+    expect(yellDecorator(greet)()).toBe('Hello!');
+    expect(yellDecorator(introduce)('Bob', 'Alice')).toBe('Bob, meet Alice!');
   });
 });

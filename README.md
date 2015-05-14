@@ -33,8 +33,8 @@ yellDecorator(greet)();
 // returns 'Hello!'
 
 
+// Declarative use in class design.
 class MyClass {
-  // Declarative use in class design.
   @yellDecorator
   greet() {
     return 'Hello';

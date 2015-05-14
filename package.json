@@ -1,6 +1,6 @@
 {
   "name": "makedecorator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wraps a function-wrapping function and returns an ES7 decorator capable of decorating an ES6 class method.",
   "main": "lib/makedecorator.js",
   "scripts": {

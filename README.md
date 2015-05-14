@@ -45,3 +45,15 @@ let instance = new MyClass();
 instance.greet();
 // returns 'Hello!'
 ```
+
+## How to build
+
+To compile:
+
+    npm run compile
+
+To release to npm:
+
+    npm version patch
+    npm publish
+

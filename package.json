@@ -1,0 +1,40 @@
+{
+  "name": "makedecorator",
+  "version": "1.0.0",
+  "description": "Wraps a function-wrapping function and returns an ES7 decorator capable of decorating an ES6 class method.",
+  "main": "lib/makedecorator.js",
+  "scripts": {
+    "compile-node": "node_modules/.bin/babel -d lib/ src/",
+    "prepublish": "npm run compile-node",
+    "test": "BABEL_JEST_STAGE=1 node_modules/.bin/jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusionbox/makedecorator.git"
+  },
+  "homepage": "https://github.com/fusionbox/makedecorator",
+  "keywords": [
+    "decorators",
+    "ES7",
+    "utils"
+  ],
+  "author": "Fusionbox, Inc.",
+  "license": "BSD",
+  "devDependencies": {
+    "babel": "^5.2.17",
+    "babel-core": "^5.2.17",
+    "babel-jest": "^5.2.0",
+    "babel-loader": "^5.0.0",
+    "jest-cli": "^0.4.3"
+  }
+}
